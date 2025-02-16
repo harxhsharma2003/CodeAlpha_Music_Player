@@ -1,0 +1,119 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+}
+
+.music-player {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 320px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.album-art img {
+    width: 220px;
+    height: 220px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+.song-info {
+    margin: 15px 0;
+    color: #fff;
+}
+
+#song-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#artist {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.controls button {
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: bounce 0.5s ease-in-out;
+}
+
+.controls button:hover {
+    background: linear-gradient(135deg, #ff5e62, #ff9966);
+    transform: scale(1.1);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.progress-container {
+    margin: 15px 0;
+    width: 100%;
+}
+
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    -moz-animation: none;
+    background: rgba(255, 255, 255, 0.6);
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-10px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.volume-control label {
+    margin-right: 10px;
+}
